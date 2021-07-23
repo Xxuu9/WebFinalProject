@@ -155,3 +155,8 @@ C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\D
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\ref\DogBreed.dll
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\DogBreed.pdb
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\DogBreed.genruntimeconfig.cache
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Create.cshtml.g.cs
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Delete.cshtml.g.cs
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Details.cshtml.g.cs
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Edit.cshtml.g.cs
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Index.cshtml.g.cs

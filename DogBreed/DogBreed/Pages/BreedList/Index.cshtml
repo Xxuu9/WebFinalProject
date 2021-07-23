@@ -1,0 +1,42 @@
+﻿@page
+@model DogBreed.Pages.BreedList.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Breed[0].BreedName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Breed[0].SubBreedName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Breed) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BreedName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SubBreedName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.DogID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.DogID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.DogID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
