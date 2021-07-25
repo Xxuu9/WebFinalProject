@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DogBreed.Models;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -22,9 +24,11 @@ namespace DogBreed.Pages
             get; protected set;
         } = false;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel(ILogger<IndexModel> logger, DogBreed.Data.DogBreedDbContext context)
         {
             _logger = logger;
+            _context = context;
+
         }
 
         public void OnGet()
@@ -32,18 +36,33 @@ namespace DogBreed.Pages
 
         }
 
-        public void OnPost(string searchValue, string breedType)
+        private readonly Data.DogBreedDbContext _context;
+
+        public IList<Breed> Breeds { get; set; }
+
+        public List<string> breedList = new List<string>();
+
+        public List<string> subBreedList = new List<string>();
+
+
+        public async Task OnPostAsync(string searchValue, string breedType)
         {
-            //_logger.LogInformation($"{Request.Path}:{Request.Method}:{User?.Identity?.Name: \"Anonymous\"}");
-            //_logger.LogDebug($"Left number is {leftNumber}");
-            //_logger.LogTrace("About to enter switch statement");
 
+            Breeds = await _context.Breeds.ToListAsync();
 
+            breedList = Breeds.Select(breed => breed.BreedName).ToList();  // The list of all main breed names
+            subBreedList = Breeds.Select(breed => breed.SubBreedName).ToList();  // The list of all sub breed names
+            var allBreedList = breedList.Zip(subBreedList, (breed, subBreed) => $"{breed}{subBreed}");  //The list of all (main breed name + sub breed name)s
 
             switch (breedType)
             {
                 case "both":
-                    Result = breedType + "123";
+                    foreach (var allBreed in allBreedList) { 
+
+                    }
+
+
+                    Result = $"{breedType}: ";
                     ResultSet = true;
                     break;
                 case "main_breed":
@@ -53,6 +72,8 @@ namespace DogBreed.Pages
                 default:
                     break;
             }
+
+            //return RedirectToPage("./Index");
         }
     }
 }
