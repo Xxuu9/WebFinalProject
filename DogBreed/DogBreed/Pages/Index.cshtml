@@ -4,7 +4,18 @@
     ViewData["Title"] = "Home page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<form id="searchForm" method="post">
+    <p>Search dog breed names here:</p>
+    <input type="text" name="searchValue" id="search_value" />
+    <fieldset id="breed-group">
+        <label><input type="radio" name="breedType" value="both" id="both" /> Both</label>
+        <label><input type="radio" name="breedType" value="main_breed" id="main_breed" /> Main breed</label>
+        <label><input type="radio" name="breedType" value="sub_breed" id="sub_breed" /> Sub breed</label>
+    </fieldset>
+    <input type="submit" value="search" id="search" />
+</form>
+
+@if (@Model.ResultSet)
+{
+    <p>Result is <output id="search_result">@Model.Result</output>.</p>            
+}
