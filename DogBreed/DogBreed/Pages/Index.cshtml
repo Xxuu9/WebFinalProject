@@ -17,5 +17,12 @@
 
 @if (@Model.ResultSet)
 {
-    <p>Result is <output id="search_result">@Model.Result</output>.</p>            
+
+    @foreach (var Result in Model.ResultList)
+    {
+        <p>Breed name: <output id="search_result">@Result</output></p>
+
+    }
 }
+
+
