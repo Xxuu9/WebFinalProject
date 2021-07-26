@@ -15,14 +15,24 @@
     <input type="submit" value="search" id="search" />
 </form>
 
-@if (@Model.ResultSet)
+<p>Matched records: </p>
+@if (@Model.IfSubmit)
 {
-
-    @foreach (var Result in Model.ResultList)
+    @if (@Model.ResultSet)
     {
-        <p>Breed name: <output id="search_result">@Result</output></p>
+        @foreach (var Result in Model.ResultList)
+        {
+            <p>Breed name: <output id="search_result">@Result</output></p>
+
+        }
+    }
+    else
+    {
+        <p>No matched records</p>
 
     }
 }
+
+
 
 
