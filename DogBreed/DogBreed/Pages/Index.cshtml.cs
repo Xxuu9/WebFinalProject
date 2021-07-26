@@ -53,7 +53,7 @@ namespace DogBreed.Pages
         public List<string> ResultList = new List<string>();
 
 
-        private static bool CheckIfContain(string BreedName, string SearchValue) {
+        private static bool CheckStringContain(string BreedName, string SearchValue) {
             if (!String.IsNullOrEmpty(BreedName) && !String.IsNullOrEmpty(SearchValue) && BreedName.ToLower().Contains(SearchValue.ToLower()))
             {
                 return true;
@@ -79,7 +79,7 @@ namespace DogBreed.Pages
                     // search the dog breed in the list
                     foreach (var AllBreed in AllBreedList)
                     {
-                        if (CheckIfContain(AllBreed, SearchValue))
+                        if (CheckStringContain(AllBreed, SearchValue))
                         {
                             ResultList.Add(AllBreed);
                         }
@@ -88,7 +88,7 @@ namespace DogBreed.Pages
                 case "main_breed":
                     foreach (var MainBreed in MainBreedList)
                     {
-                        if (CheckIfContain(MainBreed, SearchValue))
+                        if (CheckStringContain(MainBreed, SearchValue))
                         {
                             ResultList.Add(MainBreed);
                         }
@@ -97,7 +97,7 @@ namespace DogBreed.Pages
                 case "sub_breed":
                     foreach (var SubBreed in SubBreedList)
                     {
-                        if (CheckIfContain(SubBreed, SearchValue))
+                        if (CheckStringContain(SubBreed, SearchValue))
                         {
                             ResultList.Add(SubBreed);
                         }

@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogBreed", "DogBreed\DogBreed.csproj", "{7EC300E8-B61B-4603-B5E9-2580AAC75E53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogBreed", "DogBreed\DogBreed.csproj", "{7EC300E8-B61B-4603-B5E9-2580AAC75E53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DisplayImage", "DisplayImage\DisplayImage.csproj", "{9E03A329-152B-49F1-9129-1493AB974D8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SearchBreeds", "DisplayImage\SearchBreeds.csproj", "{9E03A329-152B-49F1-9129-1493AB974D8B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchBreeds-Tests", "SearchBreeds-Tests\SearchBreeds-Tests.csproj", "{4697B9DE-8A9D-4070-A9AE-A2783C37F61F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{9E03A329-152B-49F1-9129-1493AB974D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9E03A329-152B-49F1-9129-1493AB974D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9E03A329-152B-49F1-9129-1493AB974D8B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4697B9DE-8A9D-4070-A9AE-A2783C37F61F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4697B9DE-8A9D-4070-A9AE-A2783C37F61F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4697B9DE-8A9D-4070-A9AE-A2783C37F61F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4697B9DE-8A9D-4070-A9AE-A2783C37F61F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
