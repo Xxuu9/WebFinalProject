@@ -6,7 +6,7 @@ namespace SearchBreeds
 {
     public class SearchBreedName
     {
-        private static bool CheckStringContain(string BreedName, string SearchValue)
+        public static bool CheckStringContain(string BreedName, string SearchValue)
         {
             if (!String.IsNullOrEmpty(BreedName) && !String.IsNullOrEmpty(SearchValue) && BreedName.ToLower().Contains(SearchValue.ToLower()))
             {
@@ -18,7 +18,7 @@ namespace SearchBreeds
             }
         }
 
-        private static List<string> SearchStrings(List<String> StringList, string SearchValue)
+        public static List<string> SearchStrings(List<String> StringList, string SearchValue)
         {
 
             List<string> ResultList = new List<string>();
@@ -34,7 +34,7 @@ namespace SearchBreeds
             return ResultList;
         }
 
-        private static List<string> MergeLists(List<String> StringList1, List<String> StringList2)
+        public static List<string> MergeLists(List<String> StringList1, List<String> StringList2)
         {
             List<string> MergedList = new List<string>();
 

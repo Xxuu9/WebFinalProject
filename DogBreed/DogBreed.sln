@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogBreed", "DogBreed\DogBre
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchBreeds", "SearchBreeds\SearchBreeds.csproj", "{897F88E6-AA7E-477F-972B-C54DD6D9EFC7}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SearchBreeds-Tests", "SearchBreeds-Tests\SearchBreeds-Tests.csproj", "{22E6535D-7505-45A4-B1AE-C6D46729F88E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{897F88E6-AA7E-477F-972B-C54DD6D9EFC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{897F88E6-AA7E-477F-972B-C54DD6D9EFC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{897F88E6-AA7E-477F-972B-C54DD6D9EFC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22E6535D-7505-45A4-B1AE-C6D46729F88E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22E6535D-7505-45A4-B1AE-C6D46729F88E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22E6535D-7505-45A4-B1AE-C6D46729F88E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22E6535D-7505-45A4-B1AE-C6D46729F88E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
