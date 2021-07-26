@@ -1,0 +1,11 @@
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\bin\Debug\net5.0\SearchBreeds.deps.json
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\bin\Debug\net5.0\SearchBreeds.dll
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\bin\Debug\net5.0\ref\SearchBreeds.dll
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\bin\Debug\net5.0\SearchBreeds.pdb
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\obj\Debug\net5.0\SearchBreeds.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\obj\Debug\net5.0\SearchBreeds.AssemblyInfoInputs.cache
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\obj\Debug\net5.0\SearchBreeds.AssemblyInfo.cs
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\obj\Debug\net5.0\SearchBreeds.csproj.CoreCompileInputs.cache
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\obj\Debug\net5.0\SearchBreeds.dll
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\obj\Debug\net5.0\ref\SearchBreeds.dll
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\SearchBreeds\obj\Debug\net5.0\SearchBreeds.pdb
