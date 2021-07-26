@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DogBreed\DogBreed.csproj" />
+    <ProjectReference Include="..\SearchBreeds\SearchBreeds.csproj" />
   </ItemGroup>
 
 </Project>
