@@ -6,22 +6,45 @@ namespace SearchBreeds_Tests
     public class SearchBreedsTest
     {
         [TestMethod]
-        public void TestMethod1()
+        [DataRow("Dog", "D")]
+        [DataRow("Dog", "d")]
+        [TestCategory("Contain")]
+        public void CheckStringContainNorm(string string1, string string2)
         {
-            string string1 = "Dog";
-            string string2 = "D";
             bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
             Assert.AreEqual(true, result);
 
         }
 
         [TestMethod]
-        public void TestMethod2()
+        [TestCategory("Contain")]
+        [DataRow("Dog", "og ")]
+        public void CheckStringContainNorm2(string string1, string string2)
         {
-            string string1 = "Dog";
-            string string2 = "d";
             bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
-            Assert.AreEqual(true, result);
+            Assert.AreEqual(false, result);
+
+        }
+
+        [TestMethod]
+        [DataRow("", "d")]
+        [DataRow("Dog", "")]
+        [TestCategory("Contain")]
+        public void CheckStringContainEmpty(string string1, string string2)
+        {
+            bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
+            Assert.AreEqual(false, result);
+
+        }
+
+        [TestMethod]
+        [TestCategory("Contain")]
+        [DataRow(null, "dog")]
+        [DataRow("Dog", null)]
+        public void CheckStringContainNull(string string1, string string2)
+        {
+            bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
+            Assert.AreEqual(false, result);
 
         }
     }
