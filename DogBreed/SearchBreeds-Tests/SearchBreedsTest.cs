@@ -1,4 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace SearchBreeds_Tests
 {
@@ -45,6 +47,41 @@ namespace SearchBreeds_Tests
         {
             bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
             Assert.AreEqual(false, result);
+
+        }
+
+
+        [TestMethod]
+        [TestCategory("Merge")]
+        public void MergeListsNorm()
+        {
+            List<string> list1 = new List<string>{ "Dog1", "Dog2", "Dog3" };
+            List<string> list2 = new List<string>{ "", "subDog2", "subDog3" };
+
+            List<string> answer = new List<string> { "Dog1 ", "Dog2 subDog2", "Dog3 subDog3" };
+
+            List<string> result;
+
+            result = SearchBreeds.SearchBreedName.MergeLists(list1, list2);
+
+            Assert.AreEqual(true, answer.SequenceEqual(result));
+
+        }
+
+
+        [TestMethod]
+        [TestCategory("Search")]
+        public void SearchStringsNorm()
+        {
+            List<string> list1 = new List<string> { "Dog1 ", "Dog2 subDog2", "Dog3 subDog3" };
+            string string1 = "Dog1";
+            List<string> answer = new List<string> { "Dog1 "};
+
+            List<string> result;
+
+            result = SearchBreeds.SearchBreedName.SearchStrings(list1, string1);
+
+            Assert.AreEqual(true, answer.SequenceEqual(result));
 
         }
     }

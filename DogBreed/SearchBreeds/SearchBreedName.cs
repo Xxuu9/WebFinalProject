@@ -34,11 +34,11 @@ namespace SearchBreeds
             return ResultList;
         }
 
-        public static List<string> MergeLists(List<String> StringList1, List<String> StringList2)
+        public static List<string> MergeLists(List<string> StringList1, List<string> StringList2)
         {
             List<string> MergedList = new List<string>();
 
-            MergedList = (List<string>)StringList1.Zip(StringList2, (string1, string2) => $"{string1} {string2}");
+            MergedList = StringList1.Zip(StringList2, (string1, string2) => $"{string1} {string2}").ToList();
 
             return MergedList;
         }
