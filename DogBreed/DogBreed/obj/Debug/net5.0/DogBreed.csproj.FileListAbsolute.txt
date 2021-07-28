@@ -160,3 +160,5 @@ C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\R
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Details.cshtml.g.cs
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Edit.cshtml.g.cs
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\Index.cshtml.g.cs
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\bin\Debug\net5.0\SearchBreeds.dll
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\bin\Debug\net5.0\SearchBreeds.pdb

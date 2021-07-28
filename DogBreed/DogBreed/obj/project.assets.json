@@ -2143,6 +2143,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
+      },
+      "SearchBreeds/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SearchBreeds.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SearchBreeds.dll": {}
+        }
       }
     }
   },
@@ -7480,6 +7490,11 @@
         "system.xml.xmlserializer.4.3.0.nupkg.sha512",
         "system.xml.xmlserializer.nuspec"
       ]
+    },
+    "SearchBreeds/1.0.0": {
+      "type": "project",
+      "path": "../SearchBreeds/SearchBreeds.csproj",
+      "msbuildProject": "../SearchBreeds/SearchBreeds.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7489,7 +7504,8 @@
       "Microsoft.AspNetCore.Identity.UI >= 5.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 5.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 5.0.8",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 5.0.2",
+      "SearchBreeds >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7523,7 +7539,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\meena\\source\\repos\\WebFinalProject\\DogBreed\\SearchBreeds\\SearchBreeds.csproj": {
+              "projectPath": "C:\\Users\\meena\\source\\repos\\WebFinalProject\\DogBreed\\SearchBreeds\\SearchBreeds.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

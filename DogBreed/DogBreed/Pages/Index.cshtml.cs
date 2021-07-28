@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using SearchBreeds;
 
 namespace DogBreed.Pages
 {
@@ -14,10 +15,6 @@ namespace DogBreed.Pages
     {
         private readonly ILogger<IndexModel> _logger;
 
-        //public List<string> ResultList
-        //{
-        //    get; set;
-        //}
 
         public bool ResultSet
         {
@@ -50,18 +47,11 @@ namespace DogBreed.Pages
 
         public List<string> SubBreedList = new List<string>();
 
+        public List<string> AllBreedList = new List<string>();
+
         public List<string> ResultList = new List<string>();
 
 
-        private static bool CheckStringContain(string BreedName, string SearchValue) {
-            if (!String.IsNullOrEmpty(BreedName) && !String.IsNullOrEmpty(SearchValue) && BreedName.ToLower().Contains(SearchValue.ToLower()))
-            {
-                return true;
-            }
-            else {
-                return false;
-            }
-        }
 
         public async Task OnPostAsync(string SearchValue, string BreedType)
         {
@@ -71,37 +61,19 @@ namespace DogBreed.Pages
 
             MainBreedList = Breeds.Select(breed => breed.BreedName).ToList();  // The list of all main breed names
             SubBreedList = Breeds.Select(breed => breed.SubBreedName).ToList();  // The list of all sub breed names
-            var AllBreedList = MainBreedList.Zip(SubBreedList, (breed, subBreed) => $"{breed} {subBreed}");  //The list of all (main breed name + sub breed name)s
+
+            AllBreedList = SearchBreedName.MergeLists(MainBreedList, SubBreedList);
 
             switch (BreedType)
             {
                 case "both":
-                    // search the dog breed in the list
-                    foreach (var AllBreed in AllBreedList)
-                    {
-                        if (CheckStringContain(AllBreed, SearchValue))
-                        {
-                            ResultList.Add(AllBreed);
-                        }
-                    }
+                    ResultList = SearchBreedName.SearchStrings(AllBreedList, SearchValue);
                     break;
                 case "main_breed":
-                    foreach (var MainBreed in MainBreedList)
-                    {
-                        if (CheckStringContain(MainBreed, SearchValue))
-                        {
-                            ResultList.Add(MainBreed);
-                        }
-                    }
+                    ResultList = SearchBreedName.SearchStrings(MainBreedList, SearchValue);
                     break;
                 case "sub_breed":
-                    foreach (var SubBreed in SubBreedList)
-                    {
-                        if (CheckStringContain(SubBreed, SearchValue))
-                        {
-                            ResultList.Add(SubBreed);
-                        }
-                    }
+                    ResultList = SearchBreedName.SearchStrings(SubBreedList, SearchValue);
                     break;
                 default:
                     break;
