@@ -7,9 +7,9 @@ namespace SearchBreeds
 {
     public class SearchBreedName
     {
-        public static bool CheckStringContain(string BreedName, string SearchValue)
+        public static bool checkStringContain(string breedName, string searchValue)
         {
-            if (!String.IsNullOrEmpty(BreedName) && !String.IsNullOrEmpty(SearchValue) && BreedName.ToLower().Contains(SearchValue.ToLower()))
+            if (!String.IsNullOrEmpty(breedName) && !String.IsNullOrEmpty(searchValue) && breedName.ToLower().Contains(searchValue.ToLower()))
             {
                 return true;
             }
@@ -19,48 +19,31 @@ namespace SearchBreeds
             }
         }
 
-        public static List<string> SearchStrings(List<String> StringList, string SearchValue)
+        public static List<string> searchStrings(List<String> stringList, string searchValue)
         {
 
-            List<string> ResultList = new List<string>();
+            List<string> resultList = new List<string>();
 
-            foreach (var Element in StringList)
+            foreach (var element in stringList)
             {
-                if (CheckStringContain(Element, SearchValue))
+                if (checkStringContain(element, searchValue))
                 {
-                    ResultList.Add(Element);
+                    resultList.Add(element);
                 }
             }
 
-            return ResultList;
+            return resultList;
         }
 
-        public static List<string> MergeLists(List<string> StringList1, List<string> StringList2)
+        public static List<string> mergeLists(List<string> stringList1, List<string> stringList2)
         {
-            List<string> MergedList = new List<string>();
+            List<string> mergedList = new List<string>();
 
-            MergedList = StringList1.Zip(StringList2, (String1, String2) => $"{String1} {String2}").ToList();
+            mergedList = stringList1.Zip(stringList2, (string1, string2) => $"{string1} {string2}").ToList();
 
-            return MergedList;
+            return mergedList;
         }
 
-
-        //FIXME how to get the data from the database in Library
-        //public static Task<List<string>> SearchStringsFromDatabaseAsync(string SearchValue) {
-        //    List<string> MainBreedList = new List<string>();
-        //    List<string> SubBreedList = new List<string>();
-        //    List<string> AllBreedList = new List<string>();
-        //    List<string> ResultList = new List<string>();
-
-        //    DogBreed.Data.DogBreedDbContext _context;
-
-
-        //    object Breeds = _context.Breeds.ToListAsync();
-
-
-
-        //    return ResultList;
-        //}
 
 
 

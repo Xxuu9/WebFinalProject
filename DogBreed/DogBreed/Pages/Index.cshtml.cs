@@ -62,18 +62,18 @@ namespace DogBreed.Pages
             MainBreedList = Breeds.Select(breed => breed.BreedName).ToList();  // The list of all main breed names
             SubBreedList = Breeds.Select(breed => breed.SubBreedName).ToList();  // The list of all sub breed names
 
-            AllBreedList = SearchBreedName.MergeLists(MainBreedList, SubBreedList);
+            AllBreedList = SearchBreedName.mergeLists(MainBreedList, SubBreedList);
 
             switch (BreedType)
             {
                 case "both":
-                    ResultList = SearchBreedName.SearchStrings(AllBreedList, SearchValue);
+                    ResultList = SearchBreedName.searchStrings(AllBreedList, SearchValue);
                     break;
                 case "main_breed":
-                    ResultList = SearchBreedName.SearchStrings(MainBreedList, SearchValue);
+                    ResultList = SearchBreedName.searchStrings(MainBreedList, SearchValue);
                     break;
                 case "sub_breed":
-                    ResultList = SearchBreedName.SearchStrings(SubBreedList, SearchValue);
+                    ResultList = SearchBreedName.searchStrings(SubBreedList, SearchValue);
                     break;
                 default:
                     break;

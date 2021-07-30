@@ -13,7 +13,7 @@ namespace SearchBreeds_Tests
         [TestCategory("Contain")]
         public void CheckStringContainNorm(string string1, string string2)
         {
-            bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
+            bool result = SearchBreeds.SearchBreedName.checkStringContain(string1, string2);
             Assert.AreEqual(true, result);
 
         }
@@ -23,7 +23,7 @@ namespace SearchBreeds_Tests
         [DataRow("Dog", "og ")]
         public void CheckStringContainNorm2(string string1, string string2)
         {
-            bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
+            bool result = SearchBreeds.SearchBreedName.checkStringContain(string1, string2);
             Assert.AreEqual(false, result);
 
         }
@@ -34,7 +34,7 @@ namespace SearchBreeds_Tests
         [TestCategory("Contain")]
         public void CheckStringContainEmpty(string string1, string string2)
         {
-            bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
+            bool result = SearchBreeds.SearchBreedName.checkStringContain(string1, string2);
             Assert.AreEqual(false, result);
 
         }
@@ -45,7 +45,7 @@ namespace SearchBreeds_Tests
         [DataRow("Dog", null)]
         public void CheckStringContainNull(string string1, string string2)
         {
-            bool result = SearchBreeds.SearchBreedName.CheckStringContain(string1, string2);
+            bool result = SearchBreeds.SearchBreedName.checkStringContain(string1, string2);
             Assert.AreEqual(false, result);
 
         }
@@ -62,7 +62,7 @@ namespace SearchBreeds_Tests
 
             List<string> result;
 
-            result = SearchBreeds.SearchBreedName.MergeLists(list1, list2);
+            result = SearchBreeds.SearchBreedName.mergeLists(list1, list2);
 
             Assert.AreEqual(true, answer.SequenceEqual(result));
 
@@ -79,7 +79,7 @@ namespace SearchBreeds_Tests
 
             List<string> result;
 
-            result = SearchBreeds.SearchBreedName.SearchStrings(list1, string1);
+            result = SearchBreeds.SearchBreedName.searchStrings(list1, string1);
 
             Assert.AreEqual(true, answer.SequenceEqual(result));
 

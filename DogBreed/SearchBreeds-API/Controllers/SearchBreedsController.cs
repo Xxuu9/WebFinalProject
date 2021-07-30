@@ -24,22 +24,22 @@ namespace SearchBreeds_API.Controllers
             List<string> allBreedList;
             List<string> searchResult;
 
-            allBreedList = SearchBreeds.SearchBreedName.MergeLists(mainBreedList, subBreedList);
+            allBreedList = SearchBreeds.SearchBreedName.mergeLists(mainBreedList, subBreedList);
 
 
             switch (breedType)
             {
                 case "both":
-                    searchResult = SearchBreeds.SearchBreedName.SearchStrings(allBreedList, searchValue);
+                    searchResult = SearchBreeds.SearchBreedName.searchStrings(allBreedList, searchValue);
                     break;
                 case "main_breed":
-                    searchResult = SearchBreeds.SearchBreedName.SearchStrings(mainBreedList, searchValue);
+                    searchResult = SearchBreeds.SearchBreedName.searchStrings(mainBreedList, searchValue);
                     break;
                 case "sub_breed":
-                    searchResult = SearchBreeds.SearchBreedName.SearchStrings(subBreedList, searchValue);
+                    searchResult = SearchBreeds.SearchBreedName.searchStrings(subBreedList, searchValue);
                     break;
                 default:
-                    searchResult = SearchBreeds.SearchBreedName.SearchStrings(allBreedList, searchValue);
+                    searchResult = SearchBreeds.SearchBreedName.searchStrings(allBreedList, searchValue);
                     break;
             }
 
