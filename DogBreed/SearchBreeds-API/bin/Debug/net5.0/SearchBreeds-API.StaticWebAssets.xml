@@ -1,0 +1,4 @@
+﻿<StaticWebAssets Version="1.0">
+  <ContentRoot BasePath="/Identity" Path="C:\Users\meena\.nuget\packages\microsoft.aspnetcore.identity.ui\5.0.8\staticwebassets\V4\" />
+  <ContentRoot BasePath="_content/DogBreed" Path="C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\wwwroot\" />
+</StaticWebAssets>

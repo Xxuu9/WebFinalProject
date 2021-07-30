@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace SearchBreeds
 {
@@ -38,10 +39,28 @@ namespace SearchBreeds
         {
             List<string> MergedList = new List<string>();
 
-            MergedList = StringList1.Zip(StringList2, (string1, string2) => $"{string1} {string2}").ToList();
+            MergedList = StringList1.Zip(StringList2, (String1, String2) => $"{String1} {String2}").ToList();
 
             return MergedList;
         }
+
+
+        //FIXME how to get the data from the database in Library
+        //public static Task<List<string>> SearchStringsFromDatabaseAsync(string SearchValue) {
+        //    List<string> MainBreedList = new List<string>();
+        //    List<string> SubBreedList = new List<string>();
+        //    List<string> AllBreedList = new List<string>();
+        //    List<string> ResultList = new List<string>();
+
+        //    DogBreed.Data.DogBreedDbContext _context;
+
+
+        //    object Breeds = _context.Breeds.ToListAsync();
+
+
+
+        //    return ResultList;
+        //}
 
 
 
