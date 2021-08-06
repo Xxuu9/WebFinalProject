@@ -3,10 +3,10 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
+<link href="~/css/style.css" rel="stylesheet" type="text/css" />
 <form id="searchForm" method="post">
-    <p>Search dog breed names here:</p>
-    <input type="text" name="searchValue" id="search_value" />
+    <h2>Search dog breed names here:</h2>
+    <input type="text" name="searchValue" id="search_value" placeholder="Search here..."/>
     <fieldset id="breed-group">
         <label><input type="radio" name="breedType" value="both" id="both" /> Both</label>
         <label><input type="radio" name="breedType" value="main_breed" id="main_breed" /> Main breed</label>
@@ -15,7 +15,7 @@
     <input type="submit" value="search" id="search" />
 </form>
 
-<p>Matched records: </p>
+<p id="result">Matched records: </p>
 @if (@Model.IfSubmit)
 {
     @if (@Model.ResultSet)
