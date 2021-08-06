@@ -30,9 +30,9 @@ namespace SearchBreeds_Integration_Tests
         }
 
         [DataTestMethod]
-        [DataRow("Dog", "both", "Dog1")]
-        [DataRow("2", "main_breed", "Dog2")]
-        [DataRow("2", "sub_breed", "subdog2")]
+        [DataRow("terrier", "both", "terrier american")]
+        [DataRow("sp", "main_breed", "springer")]
+        [DataRow("australian", "sub_breed", "australian")]
         public void VerifyPageTitle(string searchValue, string searchType, string expectedResult)
         {
             // Replace with your own test logic

@@ -169,3 +169,4 @@ C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\bin\Debug\net5.0\S
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\bin\Debug\net5.0\System.Web.WebPages.Razor.dll
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\bin\Debug\net5.0\System.Web.WebPages.dll
 C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\bin\Debug\net5.0\Microsoft.Web.Infrastructure.dll
+C:\Users\meena\source\repos\WebFinalProject\DogBreed\DogBreed\obj\Debug\net5.0\Razor\Pages\BreedList\ShowImage.cshtml.g.cs

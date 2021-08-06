@@ -83,6 +83,8 @@ namespace DogBreed.Pages
                 ResultSet = true;
             }
 
+            ResultList = ResultList.Distinct().ToList();
+
             //return RedirectToPage("./Index");
         }
     }
