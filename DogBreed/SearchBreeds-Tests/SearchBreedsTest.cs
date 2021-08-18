@@ -19,6 +19,19 @@ namespace SearchBreeds_Tests
         }
 
         [TestMethod]
+        [DataRow("Dog", "C")]
+        [DataRow("Dog", "dogg")]
+        [DataRow("Dog", "")]
+        [DataRow("", "Dog")]
+        [TestCategory("Contain")]
+        public void CheckStringNotContainNorm(string string1, string string2)
+        {
+            bool result = SearchBreeds.SearchBreedName.checkStringContain(string1, string2);
+            Assert.AreNotEqual(true, result);
+
+        }
+
+        [TestMethod]
         [TestCategory("Contain")]
         [DataRow("Dog", "og ")]
         public void CheckStringContainNorm2(string string1, string string2)
@@ -65,7 +78,39 @@ namespace SearchBreeds_Tests
             result = SearchBreeds.SearchBreedName.mergeLists(list1, list2);
 
             Assert.AreEqual(true, answer.SequenceEqual(result));
+        }
 
+        [TestMethod]
+        [TestCategory("Merge")]
+        public void MergeListsNormError1()
+        {
+            List<string> list1 = new List<string> { "Dog1", "Dog2", "Dog3" };
+            List<string> list2 = new List<string> { "", "subDog2", "subDog3" };
+
+            List<string> answer = new List<string> { "Dog1", "Dog2 subDog2", "Dog3 subDog3" };
+
+            List<string> result;
+
+            result = SearchBreeds.SearchBreedName.mergeLists(list1, list2);
+
+            Assert.AreNotEqual(true, answer.SequenceEqual(result));
+        }
+
+
+        [TestMethod]
+        [TestCategory("Merge")]
+        public void MergeListsNormError2()
+        {
+            List<string> list1 = new List<string> { "Dog1", "Dog2", "Dog3" };
+            List<string> list2 = new List<string> { "", "subDog2", "subDog3" };
+
+            List<string> answer = new List<string> { "", "", "" };
+
+            List<string> result;
+
+            result = SearchBreeds.SearchBreedName.mergeLists(list1, list2);
+
+            Assert.AreNotEqual(true, answer.SequenceEqual(result));
         }
 
 
@@ -82,6 +127,38 @@ namespace SearchBreeds_Tests
             result = SearchBreeds.SearchBreedName.searchStrings(list1, string1);
 
             Assert.AreEqual(true, answer.SequenceEqual(result));
+
+        }
+
+        [TestMethod]
+        [TestCategory("Search")]
+        public void SearchStringsNormError1()
+        {
+            List<string> list1 = new List<string> { "Dog1 ", "Dog2 subDog2", "Dog3 subDog3" };
+            string string1 = "Dog1";
+            List<string> answer = new List<string> { "Dog1" };
+
+            List<string> result;
+
+            result = SearchBreeds.SearchBreedName.searchStrings(list1, string1);
+
+            Assert.AreNotEqual(true, answer.SequenceEqual(result));
+
+        }
+
+        [TestMethod]
+        [TestCategory("Search")]
+        public void SearchStringsNormError2()
+        {
+            List<string> list1 = new List<string> { "Dog1 ", "Dog2 subDog2", "Dog3 subDog3" };
+            string string1 = "Dog1";
+            List<string> answer = new List<string> { "" };
+
+            List<string> result;
+
+            result = SearchBreeds.SearchBreedName.searchStrings(list1, string1);
+
+            Assert.AreNotEqual(true, answer.SequenceEqual(result));
 
         }
     }
