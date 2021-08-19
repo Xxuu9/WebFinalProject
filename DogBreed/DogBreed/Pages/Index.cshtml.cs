@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using SearchBreeds;
+using Newtonsoft.Json;
 
 namespace DogBreed.Pages
 {
@@ -34,10 +35,10 @@ namespace DogBreed.Pages
 
         }
 
-        public void OnGet()
-        {
-            IfSubmit = false;
-        }
+        //public void OnGet()
+        //{
+        //    IfSubmit = false;
+        //}
 
         private readonly Data.DogBreedDbContext _context;
 
@@ -50,6 +51,40 @@ namespace DogBreed.Pages
         public List<string> AllBreedList = new List<string>();
 
         public List<string> ResultList = new List<string>();
+
+
+
+        private string dogUrl = "https://dog.ceo/api/breeds/list/all";
+
+        public async Task OnGetAsync()
+        {
+            Breeds = await _context.Breeds.ToListAsync();
+
+            if (Breeds.Count == 0)
+            {
+                string json = new System.Net.WebClient().DownloadString(dogUrl);
+                BreedListResponse breedResponse = JsonConvert.DeserializeObject<BreedListResponse>(json);
+                foreach (var item in breedResponse.message)
+                {
+                    var mainBreed = item.Key;
+                    foreach (var subBreed in item.Value)
+                    {
+                        Breed a = new Breed()
+                        {
+                            BreedName = mainBreed,
+                            SubBreedName = subBreed
+                        };
+                        _context.Breeds.Add(a);
+
+                    }
+                };
+
+                await _context.SaveChangesAsync();
+
+                Breeds = await _context.Breeds.ToListAsync();
+            }
+
+        }
 
 
 
