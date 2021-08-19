@@ -16,6 +16,9 @@ namespace DogBreed.Pages.BreedList
 
         public string imageUrl;
 
+        public bool APIError = false;
+
+
         public ShowImageModel(Data.DogBreedDbContext context)
         {
             _context = context;
@@ -47,10 +50,16 @@ namespace DogBreed.Pages.BreedList
                 dogImageUrl = "https://dog.ceo/api/breed/" + Breed.BreedName + "/" + Breed.SubBreedName + "/images/random";
             }
 
-            string json = new System.Net.WebClient().DownloadString(dogImageUrl);
-            ImageResponse imageResponse = JsonConvert.DeserializeObject<ImageResponse>(json);
+            try
+            {
+                string json = new System.Net.WebClient().DownloadString(dogImageUrl);
+                ImageResponse imageResponse = JsonConvert.DeserializeObject<ImageResponse>(json);
 
-            imageUrl = imageResponse.message;
+                imageUrl = imageResponse.message;
+            }
+            catch {
+                APIError = true;
+            }
 
             //return Redirect(imageResponse.message) ;
 

@@ -8,6 +8,17 @@
 
 <h2>Click the image to change a new one!</h2>
 
-<a href="javascript:document.location.reload(true);"><img src=@Model.imageUrl alt="random_image" width="600px" /> </a>
 
 
+
+
+@if (Model.APIError)
+{
+    <p>Oops! The image is missing</p>
+
+}
+else
+{
+    <a href="javascript:document.location.reload(true);"><img src=@Model.imageUrl alt="random_image" width="600px" /> </a>
+
+}
